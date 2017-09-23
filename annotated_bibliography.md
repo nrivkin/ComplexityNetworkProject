@@ -24,3 +24,11 @@ Axelrod and Douglas argue that evolution can produce cooperation as a trait, eve
 Santos, F. C., & Pacheco, J. M. (2005). Scale-free networks provide a unifying framework for the emergence of cooperation. Physical Review Letters, 95(9), 098104.
 
 Santos and Pacheco find that cooperation becomes dominating features in scale-free networks unlike regualr graphs. They adopt the prisoner's dilemma and snowdrift game to research cooperation. As the correlation between individuals becomes bigger, the cooperation emerges throughout the entire population. They simulate the graph from small network with 100 individuals to very large population.
+
+
+[**Spatial prisoner’s dilemma optimally played in small-world
+networks**](http://www.sciencedirect.com/science/article/pii/S0375960103006935#bBIB002)
+
+Naoki Masuda, Kazuyuki Aihara
+
+Masuda and Aihara simulate an iterated prisoners dilemma with automata that interact only if they are connected on a graph. They simulate this on different types of networks, including regular graphs, lattices, and small-world networks. They find that small world networks produce cooperation to the greatest extent. They also investigate the effects of noise on the system, and consider the robustness of cooperation on the different networks.
