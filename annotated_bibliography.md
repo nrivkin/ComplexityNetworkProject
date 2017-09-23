@@ -1,4 +1,4 @@
-(A simple rule for the evolution of cooperation on graphs)[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2430087/]
+[**A simple rule for the evolution of cooperation on graphs**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2430087/)
 
 Ohtsuki, H., Hauert, C., Lieberman, E., & Nowak, M. A. (2006). A simple rule for the evolution of cooperation on graphs. Nature, 441(7092), 502.
 
@@ -17,3 +17,10 @@ Stable URL: http://www.jstor.org/stable/1702320
 Accessed: 23-09-2017 21:15 UTC
 
 Axelrod and Douglas argue that evolution can produce cooperation as a trait, even in situations where defection is a dominant strategy in a non-iterated version of the situation. They expand on the prisoners dilemma tournament model used in Axelrods original tournament to incorporate evolutionary aspects. In the new model automata are constructed from a set of instructions, and then they interact with other automata as is the case in the older model. However, in addition to altering the population of each type of automata, the automata exchange instructions (chromosomes) or randomly alter a single instruction (mutation). Axelrod and Douglas conclude that cooperation can emerge from randomized evolution.
+
+
+[**Scale-free networks provide a unifying framework for the emergence of cooperation**](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.098104)
+
+Santos, F. C., & Pacheco, J. M. (2005). Scale-free networks provide a unifying framework for the emergence of cooperation. Physical Review Letters, 95(9), 098104.
+
+Santos and Pacheco find that cooperation becomes dominating features in scale-free networks unlike regualr graphs. They adopt the prisoner's dilemma and snowdrift game to research cooperation. As the correlation between individuals becomes bigger, the cooperation emerges throughout the entire population. They simulate the graph from small network with 100 individuals to very large population.
