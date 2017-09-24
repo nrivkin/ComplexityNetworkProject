@@ -1,10 +1,10 @@
-**A Comparison of the Spatial Prisoner's Dilemma and Snowdrift Dilemma in small world networks**
+**The Emergence of Cooperation in the Spatial Prisoner's Dilemma and Snowdrift Dilemma**
 
 Noah Rivkin, [insert name here]
 
 [abstract]
 
-We will recreate the experiment described by Masuda and Aihara [4], in which a spatial version of the prisoners dilemma is played on small world networks. We then intend to extend the experiment by altering the payoffs, and the strategies, to replicate the snowdrift dilemma, as described by Santos and Pacheco[3]. Time allowing, we may also implement more complex strategies than all-D and all-C. These strategies may require the implementaion of an iterated dilemma; while this is a major extention from the original work, we believe it might demonstrate that the conclusions found by Axelrod and Douglas hold in a spatial tournament in addition to a random tournament[2].
+We will recreate the experiment described by Masuda and Aihara [4], in which a spatial version of the prisoners dilemma is played on small world networks. This is similar to the experiment conducted by Ohtsuki, Hauert, Lieberman, and Nowak[1]. We then intend to extend the experiment by altering the payoffs, and the strategies, to replicate the snowdrift dilemma, as described by Santos and Pacheco[3]. Time allowing, we may also implement more complex strategies than all-D and all-C. These strategies may require the implementaion of an iterated dilemma; while this is a major extention from the original work, we believe it might demonstrate that the conclusions found by Axelrod and Douglas hold in a spatial tournament in addition to a random tournament[2].
 
 [end of abstract]
 
@@ -26,7 +26,7 @@ Our primary concern is that it may be difficult to interpret our results when we
 
 Ohtsuki, H., Hauert, C., Lieberman, E., & Nowak, M. A. (2006). A simple rule for the evolution of cooperation on graphs. Nature, 441(7092), 502.
 
-Ohtsuki, Hauert and Lieberman are motivated from that cooperation is the property of all biological system. They propose the simple graph model in which natural selection prefers cooperation in the certain condition. They assume vertice are divided into two types, cooperators who pay a cost for neighbos to receive a benefit and defectors who only receive benefits from cooperators. They simulate for various graph types(cycle, lattice, random regular graph, random graph and scale-free network) and find the conditon that cooperators spread throughout the graph. They find that the fewer connections, the more cooperation in their model.
+Ohtsuki, Hauert, Lieberman and Nowak are motivated from that cooperation is the property of all biological system. They propose the simple graph model in which natural selection prefers cooperation in the certain condition. They assume vertice are divided into two types, cooperators who pay a cost for neighbos to receive a benefit and defectors who only receive benefits from cooperators. They simulate for various graph types(cycle, lattice, random regular graph, random graph and scale-free network) and find the conditon that cooperators spread throughout the graph. They find that the fewer connections, the more cooperation in their model.
 
 
 
