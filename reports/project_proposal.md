@@ -1,10 +1,10 @@
-**The Emergence of Cooperation in the Spatial Prisoner's Dilemma and Snowdrift Dilemma**
+###The Emergence of Cooperation in the Spatial Prisoner's Dilemma and Snowdrift Dilemma
 
 Noah Rivkin, Changjun Lim
 
 [abstract]
 
-We will recreate the experiment described by Masuda and Aihara [1], in which a spatial version of the prisoner's dilemma is played on small world networks. This is similar to the experiment conducted by Ohtsuki, Hauert, Lieberman, and Nowak[2]. We then intend to extend the experiment by altering the payoffs, and the strategies, to replicate the snowdrift dilemma, as described by Santos and Pacheco[3]. Time allowing, we may also implement more complex strategies than all-D and all-C. These strategies may require the implementation of an iterated dilemma; while this is a major extension from the original work, we believe it might demonstrate that the conclusions found by Axelrod and Douglas hold in a spatial tournament in addition to a random tournament[4].
+We will recreate the experiment described by Masuda and Aihara [1], in which a spatial version of the prisoner's dilemma is played on small world networks. This is similar to the experiment conducted by Ohtsuki, Hauert, Lieberman, and Nowak [2]. We then intend to extend the experiment by altering the payoffs, and the strategies, to replicate the snowdrift dilemma, as described by Santos and Pacheco [3]. Time allowing, we may also implement more complex strategies than all-Defector and all-Cooperator. These strategies may require the implementation of an iterated dilemma; while this is a major extension from the original work, we believe it might demonstrate that the conclusions found by Axelrod and Douglas hold in a spatial tournament in addition to a random tournament [4].
 
 [end of abstract]
 
@@ -26,7 +26,7 @@ Our primary concern is that it may be difficult to interpret our results when we
 
 Masuda, N., & Aihara, K. (2003). Spatial prisoner's dilemma optimally played in small-world networks. Physics Letters A, 313(1), 55-61.
 
-Masuda and Aihara simulate an iterated prisoners dilemma with automata that interact only if they are connected on a graph. They simulate this on different types of networks, including regular graphs, lattices, and small-world networks. They find that small world networks produce cooperation to the greatest extent. They also investigate the effects of noise on the system, and consider the robustness of cooperation on the different networks. [**A simple rule for the evolution of cooperation on graphs**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2430087/)
+Masuda and Aihara simulate an iterated prisoners dilemma with automata that interact only if they are connected on a graph. They simulate this on different types of networks, including regular graphs, lattices, and small-world networks. They find that small world networks produce cooperation to the greatest extent. They also investigate the effects of noise on the system, and consider the robustness of cooperation on the different networks.
 
 [2] [**A simple rule for the evolution of cooperation on graphs**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2430087/)
 
