@@ -2,25 +2,25 @@ import networkx as nx
 import numpy as np
 
 
-<<<<<<< HEAD
 class SpatialNetwork():
     def __init__(self, n, k, graph_type='regular', dep = None, snowdrift=False):
         """creates spatial network"""
         self.n = n
         self.k = k
-        if dep != None:
-            self.dep = dep
+        self.dep = dep
         G = create_graph(self, graph_type)
         self.G = G
 
     def create_graph(self, graph_type):
-        G = create_regular(self)
-        if type == 'regular':
+        if graph_type == 'lattice':
+            return self.create_lattice()
+        G = self.create_regular()
+        if graph_type == 'regular':
             return G
-        elif type == 'smallworld':
-            return rewire(G, p=.3)
-        elif type == 'random':
-            return rewire(G, p=1)
+        elif graph_type == 'smallworld':
+            return self.rewire(G, p=.3)
+        elif graph_type == 'random':
+            return self.rewire(G, p=1)
         else:
             raise ValueError('not a recognized graph type')
 
@@ -32,10 +32,8 @@ class SpatialNetwork():
         G = nx.DiGraph()
         quo, rem = divmod(self.k, 2)
         nodes = list(range(self.n))
-        node_data = [n for n in nodes] # will eventually add Node()
         G.add_nodes_from(nodes)
-        print(G.nodes)
-        G.add_edges_from(adjacent_edges(G.nodes(), quo))
+        G.add_edges_from(adjacent_edges(nodes, quo))
         # if k is odd, add opposite edges
         if rem:
             if n%2:
@@ -44,7 +42,21 @@ class SpatialNetwork():
             G.add_edges_from(opposite_edges())
         return G
 
-    def rewire(G, p):
+    def create_lattice(self):
+        """
+        creates a lattice graph with n nodes that is k long
+        """
+        G = nx.DiGraph()
+        nodes = list(range(self.n))
+        G.add_nodes_from(nodes)
+        for node in nodes:
+            if node + self.k in nodes:
+                G.add_edge(node, node + self.k)
+            if node % self.k != 0 and node + 1 in nodes:
+                G.add_edge(node, node + 1)
+        return G
+
+    def rewire(self, G, p):
         """Rewires each edge with probability `p`.
         code taken from/based on jupyter notebook chap3, credit to Allen Downey
         G: Graph
@@ -57,9 +69,10 @@ class SpatialNetwork():
             if flip(p):
                 u, v = edge
                 choices = nodes - {u} - set(G[u])
-                new_v = choice(tuple(choices))
+                new_v = np.random.choice(tuple(choices))
                 G.remove_edge(u, v)
                 G.add_edge(u, new_v)
+        return G
 
 def adjacent_edges(nodes, halfk):
     """
@@ -86,6 +99,13 @@ def flip(p):
     return np.random.random() < p
 
 # for testing
-net = SpatialNetwork(10,4)
-net
+# net = SpatialNetwork(10,4,graph_type='random')
 
+# # colors from our friends at http://colorbrewer2.org
+# COLORS = ['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462',
+#           '#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f']
+
+# nx.draw_circular(net.G,
+#                  node_color=COLORS[0],
+#                  node_size=2000,
+#                  with_labels=True)
