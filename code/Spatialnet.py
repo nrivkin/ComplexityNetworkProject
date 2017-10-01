@@ -2,6 +2,7 @@ import networkx as nx
 import numpy as np
 
 
+<<<<<<< HEAD
 class SpatialNetwork():
     def __init__(self, n, k, graph_type='regular', dep = None, snowdrift=False):
         """creates spatial network"""
