@@ -14,10 +14,17 @@ class SpatialNetwork():
     def create_graph(self, graph_type):
         if graph_type == 'lattice':
             return self.create_lattice()
+        elif graph_type == 'WS':
+            return nx.powerlaw_cluster_graph(4039, 22, 0)
+        elif graph_type == 'HK':
+            if self.dep != None:
+                return nx.powerlaw_cluster_graph(self.n, self.k, self.dep)
+            else:
+                return nx.powerlaw_cluster_graph(self.n, self.k, .3)
         G = self.create_regular()
         if graph_type == 'regular':
             return G
-        elif graph_type == 'smallworld':
+        elif graph_type == 'ER':
             return self.rewire(G, p=.3)
         elif graph_type == 'random':
             return self.rewire(G, p=1)
@@ -99,12 +106,12 @@ def flip(p):
     return np.random.random() < p
 
 # for testing
-# net = SpatialNetwork(10,4,graph_type='random')
-
+# net = SpatialNetwork(10,4,graph_type='HK')
+# 
 # # colors from our friends at http://colorbrewer2.org
 # COLORS = ['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462',
 #           '#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f']
-
+# 
 # nx.draw_circular(net.G,
 #                  node_color=COLORS[0],
 #                  node_size=2000,
