@@ -4,7 +4,7 @@ import numpy as np
 
 class Node():
     C, D = 'C', 'D'
-    T, R, P, S = 1, 0.25, 0, 0
+    T, R, P, S = 5, 3, 1, 0
 
     def __init__(self, state):
         """
