@@ -6,30 +6,23 @@ import networkx as nx
 import numpy as np
 from Spatialnet import SpatialNetwork
 from PDnode import Node
-<<<<<<< HEAD
 import random
-=======
->>>>>>> recreated.py: Fixed import syntax
 
 # It would be better to construct a class for
 
 # TODO: create rules
-n = 100  # the number of node
+n = 3600  # the number of node
 k = 8
 
 # TODO: create node object
-p = 0.9  # the initial ratio of cooperator
+p = 0.98  # the initial ratio of cooperator
 # initial state distribution(C/D) should be applied.
 
-<<<<<<< HEAD
 cooperators = random.sample(range(n), int(n * p))
 nodes = [Node('C') if i in cooperators else Node('D') for i in range(n)]
 
-G = SpatialNetwork(n, k, graph_type='regular')
+G = SpatialNetwork(n, k, graph_type='lattice')
 Graph = G.G
-=======
-Graph = SpatialNetwork(n, k)
->>>>>>> recreated.py: Fixed import syntax
 
 
 # TODO: create main
@@ -42,7 +35,10 @@ def proceed_one_stage():
     # update state
     for i in range(n):
         neighbor = [nodes[key] for key in Graph[i]]
-        nodes[i].update_state(neighbor)
+        nodes[i].get_max_state(neighbor)
+
+    for i in range(n):
+        nodes[i].update_state()
 
     c_ratio = len([node for node in nodes if node.is_cooperator()]) / n
     print("c ratio: {}".format(c_ratio))
