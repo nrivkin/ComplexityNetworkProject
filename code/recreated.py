@@ -4,20 +4,25 @@ Noah Rivkin and Changjun Lim
 
 import networkx as nx
 import numpy as np
-from code.Spatialnet import Network
-from code.PDnode import Node
+from Spatialnet import SpatialNetwork
+from PDnode import Node
+import random
 
 # It would be better to construct a class for
 
 # TODO: create rules
-n = 100
-k = 8
+n = 100  # the number of node
+k = 10
 
 # TODO: create node object
+p = 0.9  # the initial ratio of cooperator
 # initial state distribution(C/D) should be applied.
-nodes = [Node('C') for i in range(n)]
 
-Graph = Network(n, k)
+cooperators = random.sample(range(n), int(n * p))
+nodes = [Node('C') if i in cooperators else Node('D') for i in range(n)]
+
+G = SpatialNetwork(n, k, graph_type='lattice')
+Graph = G.G
 
 
 # TODO: create main
@@ -33,5 +38,10 @@ def proceed_one_stage():
         nodes[i].update_state(neighbor)
 
     c_ratio = len([node for node in nodes if node.is_cooperator()]) / n
+    print("c ratio: {}".format(c_ratio))
+
 
 # TODO: create test suite
+N = 10  # the number of steps
+for _ in range(N):
+    proceed_one_stage()
