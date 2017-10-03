@@ -6,7 +6,10 @@ import networkx as nx
 import numpy as np
 from Spatialnet import SpatialNetwork
 from PDnode import Node
+<<<<<<< HEAD
 import random
+=======
+>>>>>>> recreated.py: Fixed import syntax
 
 # It would be better to construct a class for
 
@@ -18,11 +21,15 @@ k = 8
 p = 0.9  # the initial ratio of cooperator
 # initial state distribution(C/D) should be applied.
 
+<<<<<<< HEAD
 cooperators = random.sample(range(n), int(n * p))
 nodes = [Node('C') if i in cooperators else Node('D') for i in range(n)]
 
 G = SpatialNetwork(n, k, graph_type='regular')
 Graph = G.G
+=======
+Graph = SpatialNetwork(n, k)
+>>>>>>> recreated.py: Fixed import syntax
 
 
 # TODO: create main
