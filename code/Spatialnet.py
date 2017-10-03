@@ -8,14 +8,13 @@ class SpatialNetwork():
         self.n = n
         self.k = k
         self.dep = dep
-        G = create_graph(self, graph_type)
-        self.G = G
+        self.G = self.create_graph(graph_type)
 
     def create_graph(self, graph_type):
         if graph_type == 'lattice':
             return self.create_lattice()
         elif graph_type == 'WS':
-            return nx.powerlaw_cluster_graph(4039, 22, 0)
+            return nx.powerlaw_cluster_graph(4039, 22, 0)  # number?
         elif graph_type == 'HK':
             if self.dep != None:
                 return nx.powerlaw_cluster_graph(self.n, self.k, self.dep)
@@ -43,7 +42,7 @@ class SpatialNetwork():
         G.add_edges_from(adjacent_edges(nodes, quo))
         # if k is odd, add opposite edges
         if rem:
-            if n%2:
+            if self.n%2:
                 msg = "Can't make a regular graph if n and k are odd."
                 raise ValueError(msg)
             G.add_edges_from(opposite_edges())
@@ -53,13 +52,13 @@ class SpatialNetwork():
         """
         creates a lattice graph with n nodes that is k long
         """
-        G = nx.DiGraph()
+        G = nx.Graph()
         nodes = list(range(self.n))
         G.add_nodes_from(nodes)
         for node in nodes:
             if node + self.k in nodes:
                 G.add_edge(node, node + self.k)
-            if node % self.k != 0 and node + 1 in nodes:
+            if node % self.k != (self.k-1) and node + 1 in nodes:
                 G.add_edge(node, node + 1)
         return G
 
@@ -81,6 +80,7 @@ class SpatialNetwork():
                 G.add_edge(u, new_v)
         return G
 
+
 def adjacent_edges(nodes, halfk):
     """
     code taken from/based on jupyter notebook chap3, credit to Allen Downey
@@ -90,6 +90,7 @@ def adjacent_edges(nodes, halfk):
         for j in range(i+1, i+halfk+1):
             v = nodes[j % n]
             yield u, v
+
 
 def opposite_edges(nodes):
     """Enumerates edges that connect opposite nodes.
@@ -101,9 +102,11 @@ def opposite_edges(nodes):
         v = nodes[j % n]
         yield u, v
 
+
 def flip(p):
     """Returns True with probability `p`."""
     return np.random.random() < p
+
 
 # for testing
 # net = SpatialNetwork(10,4,graph_type='HK')
