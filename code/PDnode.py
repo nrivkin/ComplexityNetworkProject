@@ -1,8 +1,4 @@
-import networkx
-import numpy as np
-
-
-class Node():
+class Node:
     C, D = 'C', 'D'
     T, R, P, S = 5, 3, 1, 0
 
@@ -52,4 +48,3 @@ class Node():
         max_score = max([neighbor.score for neighbor in neighbors])
         max_states = [neighbor.state for neighbor in neighbors if neighbor.score == max_score]
         self.state = max_states[0]
-
