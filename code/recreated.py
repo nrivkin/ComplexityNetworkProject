@@ -12,7 +12,7 @@ import random
 
 # TODO: create rules
 n = 100  # the number of node
-k = 10
+k = 8
 
 # TODO: create node object
 p = 0.9  # the initial ratio of cooperator
@@ -21,7 +21,7 @@ p = 0.9  # the initial ratio of cooperator
 cooperators = random.sample(range(n), int(n * p))
 nodes = [Node('C') if i in cooperators else Node('D') for i in range(n)]
 
-G = SpatialNetwork(n, k, graph_type='lattice')
+G = SpatialNetwork(n, k, graph_type='regular')
 Graph = G.G
 
 
@@ -42,6 +42,6 @@ def proceed_one_stage():
 
 
 # TODO: create test suite
-N = 10  # the number of steps
+N = 50  # the number of steps
 for _ in range(N):
     proceed_one_stage()

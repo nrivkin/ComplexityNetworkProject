@@ -35,7 +35,7 @@ class SpatialNetwork():
         creates regular graph. Is a helper function for rewired graphs. Some
         code taken from/based on jupyter notebook chap3, credit to Allen Downey
         """
-        G = nx.DiGraph()
+        G = nx.Graph()
         quo, rem = divmod(self.k, 2)
         nodes = list(range(self.n))
         G.add_nodes_from(nodes)
