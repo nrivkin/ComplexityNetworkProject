@@ -11,11 +11,11 @@ import random
 # It would be better to construct a class for
 
 # TODO: create rules
-n = 100  # the number of node
-k = 10
+n = 3600  # the number of node
+k = 8
 
 # TODO: create node object
-p = 0.9  # the initial ratio of cooperator
+p = 0.98  # the initial ratio of cooperator
 # initial state distribution(C/D) should be applied.
 
 cooperators = random.sample(range(n), int(n * p))
@@ -35,13 +35,16 @@ def proceed_one_stage():
     # update state
     for i in range(n):
         neighbor = [nodes[key] for key in Graph[i]]
-        nodes[i].update_state(neighbor)
+        nodes[i].get_max_state(neighbor)
+
+    for i in range(n):
+        nodes[i].update_state()
 
     c_ratio = len([node for node in nodes if node.is_cooperator()]) / n
     print("c ratio: {}".format(c_ratio))
 
 
 # TODO: create test suite
-N = 10  # the number of steps
+N = 50  # the number of steps
 for _ in range(N):
     proceed_one_stage()

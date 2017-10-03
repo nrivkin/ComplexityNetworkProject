@@ -1,12 +1,16 @@
+import random
+
+
 class Node:
     C, D = 'C', 'D'
-    T, R, P, S = 5, 3, 1, 0
+    T, R, P, S = 1, 0.25, 0, 0
 
     def __init__(self, state):
         """
         node object in graph. state is C or D
         """
         self.state = state
+        self.max_state = ''
         self.score = 0  # will hold value calculated based on prisoners dilemma
 
     @classmethod
@@ -43,8 +47,10 @@ class Node:
                 return Node.T
             return Node.P
 
-    # Copy the state of the most successful neighbor
-    def update_state(self, neighbors):
+    def get_max_state(self, neighbors):
         max_score = max([neighbor.score for neighbor in neighbors])
-        max_states = [neighbor.state for neighbor in neighbors if neighbor.score == max_score]
-        self.state = max_states[0]
+        self.max_state = random.choice([neighbor.state for neighbor in neighbors if neighbor.score == max_score])
+
+    # Copy the state of the most successful neighbor
+    def update_state(self):
+        self.state = self.max_state
