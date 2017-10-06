@@ -13,8 +13,8 @@ class SpatialNetwork():
     def create_graph(self, graph_type):
         if graph_type == 'lattice':
             return self.create_lattice()
-        elif graph_type == 'WS':
-            return nx.powerlaw_cluster_graph(4039, 22, 0)  # number?
+        elif graph_type == 'powerlaw':
+            return nx.powerlaw_cluster_graph(self.n, self.k, 0)
         elif graph_type == 'HK':
             if self.dep != None:
                 return nx.powerlaw_cluster_graph(self.n, self.k, self.dep)
