@@ -3,7 +3,7 @@ import numpy as np
 
 
 class SpatialNetwork():
-    def __init__(self, n, k, graph_type='regular', dep = None, snowdrift=False):
+    def __init__(self, n, k, graph_type='regular', dep=None, snowdrift=False):
         """creates spatial network"""
         self.n = n
         self.k = k
@@ -42,7 +42,7 @@ class SpatialNetwork():
         G.add_edges_from(adjacent_edges(nodes, quo))
         # if k is odd, add opposite edges
         if rem:
-            if self.n%2:
+            if self.n % 2:
                 msg = "Can't make a regular graph if n and k are odd."
                 raise ValueError(msg)
             G.add_edges_from(opposite_edges())
@@ -58,7 +58,7 @@ class SpatialNetwork():
         for node in nodes:
             if node + self.k in nodes:
                 G.add_edge(node, node + self.k)
-            if node % self.k != (self.k-1) and node + 1 in nodes:
+            if node % self.k != (self.k - 1) and node + 1 in nodes:
                 G.add_edge(node, node + 1)
         return G
 
@@ -87,7 +87,7 @@ def adjacent_edges(nodes, halfk):
     """
     n = len(nodes)
     for i, u in enumerate(nodes):
-        for j in range(i+1, i+halfk+1):
+        for j in range(i + 1, i + halfk + 1):
             v = nodes[j % n]
             yield u, v
 
@@ -98,7 +98,7 @@ def opposite_edges(nodes):
     """
     n = len(nodes)
     for i, u in enumerate(nodes):
-        j = i + n//2
+        j = i + n // 2
         v = nodes[j % n]
         yield u, v
 

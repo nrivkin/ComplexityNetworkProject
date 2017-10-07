@@ -25,26 +25,60 @@ G = SpatialNetwork(n, k, graph_type='lattice')
 Graph = G.G
 
 
-# TODO: create main
-def proceed_one_stage():
-    # play a single PD
-    for i in range(n):
-        neighbor = [nodes[key] for key in Graph[i]]
-        nodes[i].play_pd(neighbor)
+class TestBench:
+    def __init__(self, n, k, graph_type, c0, p=None, N=100, M=10):
+        self.n = n  # the number of nodes
+        self.graph = SpatialNetwork(n, k, graph_type, dep=p).G
+        self.c0 = c0  # initial cooperator ratio
+        self.N = N  # the number of steps
+        self.M = M  # the number of test
+        self.ratio = list()
+        self.nodes = list()
+        self.initialize()
 
-    # update state
-    for i in range(n):
-        neighbor = [nodes[key] for key in Graph[i]]
-        nodes[i].get_max_state(neighbor)
+    def initialize(self):
+        cooperators = random.sample(range(self.n), int(self.n * self.c0))
+        self.nodes = [Node('C') if i in cooperators else Node('D') for i in range(self.n)]
+        self.ratio = list()
 
-    for i in range(n):
-        nodes[i].update_state()
+    def step(self):
+        # play a single PD
+        for i in range(self.n):
+            neighbor = [self.nodes[key] for key in self.graph[i]]
+            self.nodes[i].play_pd(neighbor)
 
-    c_ratio = len([node for node in nodes if node.is_cooperator()]) / n
-    print("c ratio: {}".format(c_ratio))
+        # get the highest neighbors' state
+        for i in range(self.n):
+            neighbor = [self.nodes[key] for key in self.graph[i]]
+            self.nodes[i].get_max_state(neighbor)
+
+        # update the state
+        for i in range(self.n):
+            self.nodes[i].update_state()
+
+        c_ratio = len([node for node in self.nodes if node.is_cooperator()]) / self.n
+        self.ratio.append(c_ratio)
+
+    def iterate(self):
+        ratios = np.zeros((self.M, self.N))
+        for i in range(self.M):
+            self.initialize()
+            for _ in range(self.N):
+                self.step()
+            ratios[i] = self.ratio
+        self.ratio = np.average(ratios, axis=0)
+
+    def draw(self):
+        x = range(1, len(self.ratio) + 1)
+        plt.plot(x, self.ratio * 100)
+        plt.xlabel('time')
+        plt.ylabel('% C')
+        plt.ylim(0, 100)
+        plt.show()
 
 
-# TODO: create test suite
-N = 50  # the number of steps
-for _ in range(N):
-    proceed_one_stage()
+def time_ratio_graph(n, k, graph_type, c0, N, p=None, M=10, T=1, R=0.25, P=0, S=0):
+    Node.change_rule(T, R, P, S)
+    bench = TestBench(n, k, graph_type, c0, p, N, M)
+    bench.iterate()
+    bench.draw()
