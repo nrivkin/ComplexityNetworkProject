@@ -2,6 +2,7 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 from PDnode import Node
+from Spatialnet import SpatialNetwork
 
 
 class TestBench:
@@ -105,4 +106,4 @@ def time_ratio_rewire_graph(n, k, graph_type, c0, N, M=10, T=1, R=0.25, P=0, S=0
         bench.iterate()
         bench.draw2("p="+str(p))
         plt.legend()
-        plt.show()"
+        plt.show()
