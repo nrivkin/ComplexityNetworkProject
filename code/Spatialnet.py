@@ -1,5 +1,6 @@
 import networkx as nx
 import numpy as np
+import random
 
 
 class SpatialNetwork():
@@ -13,6 +14,9 @@ class SpatialNetwork():
     def create_graph(self, graph_type):
         if graph_type == 'lattice':
             return self.create_lattice()
+        if graph_type == 'rewired_lattice':
+            G = self.create_lattice()
+            return self.rewire(G, p=.3, k=4)
         elif graph_type == 'powerlaw':
             return nx.powerlaw_cluster_graph(self.n, self.k, 0)
         elif graph_type == 'HK':
@@ -23,10 +27,10 @@ class SpatialNetwork():
         G = self.create_regular()
         if graph_type == 'regular':
             return G
-        elif graph_type == 'ER':
-            return self.rewire(G, p=.3)
+        elif graph_type == 'WS':
+            return self.rewire(G, p=.3, k=self.k)
         elif graph_type == 'random':
-            return self.rewire(G, p=1)
+            return self.rewire(G, p=1, k=self.k)
         else:
             raise ValueError('not a recognized graph type')
 
@@ -62,7 +66,7 @@ class SpatialNetwork():
                 G.add_edge(node, node + 1)
         return G
 
-    def rewire(self, G, p):
+    def rewire(self, G, p, k):
         """Rewires each edge with probability `p`.
         code taken from/based on jupyter notebook chap3, credit to Allen Downey
         G: Graph
@@ -70,14 +74,27 @@ class SpatialNetwork():
         """
         if self.dep != None:
             p = self.dep
-        nodes = set(G.nodes())
-        for edge in G.edges():
-            if flip(p):
-                u, v = edge
-                choices = nodes - {u} - set(G[u])
-                new_v = np.random.choice(tuple(choices))
-                G.remove_edge(u, v)
-                G.add_edge(u, new_v)
+        rewire_num = p * k * self.n / 2
+        all_edges = list(G.edges)
+        np.random.shuffle(all_edges)
+        chosen = all_edges[0:int(rewire_num - .5)]
+        G.remove_edges_from(chosen)
+        need_replace = set([node for node in list(G.nodes()) if len(list(G.neighbors(node))) < k])
+        while len(need_replace) > 1:
+            start = random.choice(tuple(need_replace))
+            found = False
+            pos1 = ()
+            for node in need_replace:
+                if not found:
+                    pos1 = (start, node)
+                    pos2 = (node, start)
+                    if start != node and pos1 not in G.edges and pos2 not in G.edges and pos1 not in chosen \
+                            and pos2 not in chosen:
+                        found = True
+                        G.add_edge(start, node)
+            if found == False:
+                need_replace.remove(start)
+            need_replace = need_replace - set([node for node in pos1 if len(list(G.neighbors(node))) >= k])
         return G
 
 
@@ -101,21 +118,3 @@ def opposite_edges(nodes):
         j = i + n // 2
         v = nodes[j % n]
         yield u, v
-
-
-def flip(p):
-    """Returns True with probability `p`."""
-    return np.random.random() < p
-
-
-# for testing
-# net = SpatialNetwork(10,4,graph_type='HK')
-# 
-# # colors from our friends at http://colorbrewer2.org
-# COLORS = ['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462',
-#           '#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f']
-# 
-# nx.draw_circular(net.G,
-#                  node_color=COLORS[0],
-#                  node_size=2000,
-#                  with_labels=True)
