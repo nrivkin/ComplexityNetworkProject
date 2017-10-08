@@ -75,7 +75,7 @@ class SpatialNetwork():
         if self.dep != None:
             p = self.dep
         rewire_num = p * k * self.n / 2
-        all_edges = list(G.edges)
+        all_edges = list(G.edges())
         np.random.shuffle(all_edges)
         chosen = all_edges[0:int(rewire_num - .5)]
         G.remove_edges_from(chosen)
@@ -88,7 +88,7 @@ class SpatialNetwork():
                 if not found:
                     pos1 = (start, node)
                     pos2 = (node, start)
-                    if start != node and pos1 not in G.edges and pos2 not in G.edges and pos1 not in chosen \
+                    if start != node and pos1 not in G.edges() and pos2 not in G.edges() and pos1 not in chosen \
                             and pos2 not in chosen:
                         found = True
                         G.add_edge(start, node)
