@@ -59,7 +59,7 @@ class SpatialNetwork():
         G = nx.Graph()
         nodes = list(range(self.n))
         G.add_nodes_from(nodes)
-        h = ((self.n - 1) // self.k) # the number of the lowest row
+        h = ((self.n - 1) // self.k)  # the number of the lowest row
         for node in nodes:
             row = node // self.k
             column = node % self.k
@@ -69,29 +69,33 @@ class SpatialNetwork():
             else:
                 G.add_edge(node, column)
             # right
-            if column == (self.k - 1): # rightmost column
+            if column == (self.k - 1):  # rightmost column
                 G.add_edge(node, node - self.k + 1)
             elif node + 1 < self.n:
                 G.add_edge(node, node + 1)
             else:
                 G.add_edge(node, h * self.k)
             # lower-right
-            if (node + self.k + 1) < self.n:
-                if column == (self.k - 1): # rightmost column
+            if column == (self.k - 1):  # rightmost column
+                if node + 1 == self.n:  # last point
+                    G.add_edge(node, 0)
+                else:
                     G.add_edge(node, node + 1)
-                else:
-                    G.add_edge(node, node + self.k + 1)
             else:
-                G.add_node(node, (column + 1) % self.k)
-            # lower-left
-            if (node + self.k - 1) < self.n :
-                if column == 0: # leftmost column
-                    if row == h - 1:
-                        G.add_edge(node, self.n - 1)
-                    else:
-                        G.add_edge(node, node + 2*self.k - 1)
+                if (node + self.k + 1) < self.n:
+                    G.add_edge(node, node + self.k + 1)
                 else:
-                    G.add_edge(node, node + self.k - 1)
+                    G.add_edge(node, column + 1)
+            # lower-left
+            if column == 0:  # leftmost column
+                if row == h:
+                    G.add_edge(node, self.k)
+                elif row == h - 1:
+                    G.add_edge(node, self.n - 1)
+                else:
+                    G.add_edge(node, node + 2 * self.k - 1)
+            elif (node + self.k - 1) < self.n:
+                G.add_edge(node, node + self.k - 1)
             else:
                 G.add_edge(node, (column - 1) % self.k)
             """
