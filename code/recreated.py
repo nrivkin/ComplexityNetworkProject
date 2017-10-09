@@ -7,11 +7,11 @@ from Spatialnet import SpatialNetwork
 
 class TestBench:
     def __init__(self, n, k, graph_type, c0, p=None, N=100, M=10):
-        self.n = n # the number of nodes
+        self.n = n  # the number of nodes
         self.graph = SpatialNetwork(n, k, graph_type, dep=p).G
-        self.c0 = c0 # initial cooperator ratio
-        self.N = N # the number of steps
-        self.M = M # the number of test
+        self.c0 = c0  # initial cooperator ratio
+        self.N = N  # the number of steps
+        self.M = M  # the number of test
         self.ratio = list()
         self.nodes = list()
         self.initialize()
@@ -49,19 +49,20 @@ class TestBench:
         self.ratio = np.average(ratios, axis=0)
 
     def draw(self):
-        x = range(1, len(self.ratio)+1)
-        plt.plot(x, self.ratio*100)
+        x = range(1, len(self.ratio) + 1)
+        plt.plot(x, self.ratio * 100)
         plt.xlabel('time')
         plt.ylabel('% C')
-        plt.ylim(0,100)
+        plt.ylim(0, 100)
         plt.show()
 
     def draw2(self, label=None):
-        x = range(1, len(self.ratio)+1)
+        ratio = [self.c0] + self.ratio
+        x = range(len(ratio))
         if label is None:
-            plt.plot(x, self.ratio*100)
+            plt.plot(x, ratio * 100)
         else:
-            plt.plot(x, self.ratio*100, label=label)
+            plt.plot(x, ratio * 100, label=label)
             plt.xlabel('time')
             plt.ylabel('% C')
 
@@ -73,7 +74,7 @@ def time_ratio_graph(n, k, graph_type, c0, N, p=None, M=10, T=1, R=0.25, P=0, S=
     bench.draw()
 
 
-def T_ratio_graph(n, k, graph_type, c0, N=100, p=None, M=10, T_min = 1, T_max = 2.5, T_steps = 16, R=1, P=0, S=0):
+def T_ratio_graph(n, k, graph_type, c0, N=100, p=None, M=10, T_min=1, T_max=2.5, T_steps=16, R=1, P=0, S=0):
     ratios = []
     T_values = []
     for T in np.linspace(T_min, T_max, T_steps):
@@ -82,10 +83,10 @@ def T_ratio_graph(n, k, graph_type, c0, N=100, p=None, M=10, T_min = 1, T_max = 
         bench.iterate()
         ratios.append((bench.ratio[len(bench.ratio) - 1] * 100))
         T_values.append(T)
-    plt.plot(T_values,ratios)
+    plt.plot(T_values, ratios)
     plt.xlabel('T')
     plt.ylabel('% C')
-    plt.ylim(0,100)
+    plt.ylim(0, 100)
     plt.show()
 
 
@@ -104,6 +105,6 @@ def time_ratio_rewire_graph(n, k, graph_type, c0, N, M=10, T=1, R=0.25, P=0, S=0
     for p in ps:
         bench = TestBench(n, k, graph_type, c0, p, N, M)
         bench.iterate()
-        bench.draw2("p="+str(p))
-        plt.legend()
-        plt.show()
+        bench.draw2("p=" + str(p))
+    plt.legend()
+    plt.show()
