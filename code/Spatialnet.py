@@ -16,7 +16,7 @@ class SpatialNetwork():
             return self.create_lattice()
         if graph_type == 'rewired_lattice':
             G = self.create_lattice()
-            return self.rewire(G, p=.3, k=4)
+            return self.rewire(G, p=.3, k=8)
         elif graph_type == 'powerlaw':
             return nx.powerlaw_cluster_graph(self.n, self.k, 0)
         elif graph_type == 'HK':
