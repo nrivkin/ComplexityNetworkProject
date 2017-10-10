@@ -4,20 +4,15 @@ Noah Rivkin, Changjun Lim
 
 ### Abstract:
 
-We attempted to reproduce and expand upon the findings of Masuda and Aihara[1]. Masuda and Aihara's work examines the spatial prisoner's dilemma on small world graphs. They found that cooperative behavior emerged in a wide range of conditions. When we replicated their experiment we found qualitatively similar results, but under a smaller range of conditions. We also expanded on their original work by incorporating additional types of small world graphs. They had used only Watts-Strogatz type graphs, while we tested Holmes-Kim graphs. Masuda and Aihara suggest that their work may suggest why small-world networks are so prevalent in society. They also suggest that one reason why cooperation does not always dominate could be that the rewards for defection are too high. Our analysis suggests that their results do not hold under preferentially attachment, which provides an additional explanation for real world examples where cooperation is not dominant.
+We attempted to reproduce and expand upon the findings of Masuda and Aihara [1]. Masuda and Aihara's work examines the spatial prisoner's dilemma on small world graphs. They found that cooperative behavior emerged in a wide range of conditions. When we replicated their experiment we found qualitatively similar results, but under a smaller range of conditions. We also expanded on their original work by incorporating additional types of small world graphs. They had used only Watts-Strogatz type graphs, while we tested Holmes-Kim graphs. Masuda and Aihara suggest that their work may suggest why small-world networks are so prevalent in society. They also suggest that one reason why cooperation does not always dominate could be that the rewards for defection are too high. Our analysis suggests that their results do not hold under preferentially attachment, which provides an additional explanation for real world examples where cooperation is not dominant.
 
 
 Introduction:
 
-We can find cooperation within groups in every ecological and social system. But In the game theory, the prisoner's dilemma describes the situation that each individual is tempted to defect. So there was many attempts to resolve the dilemma, like iterated games and spatial games.
+We can find cooperation within groups in every ecological and social system. But in the game theory, the prisoner's dilemma describes the situation that each individual is tempted to defect. There are two players who choose either cooperation(C) or defection(D) in prisoner's dilemma. A player choosing C receives R(reward) or S(sucker) and a player choosing D receives T(temptation) or P(Punishment) according to the opponent chooses C or D. Since T > R > P > S is given, defection is the best selection for each player regardless of the opponent's choice. So there have been many attempts to resolve the dilemma, like iterated games [2] and spatial games [1, 3].
 
--methodology
+Masuda and Aihara make the model that every node of a network is a player and in each step, a player play a single prisoner's dilemma game with its neighbors, then after every player sums their poins, they change their strategy to the most successful neighbors'(if it is best, its strategy holds) in the next step. They assume T > 1, R = 1, P = S = 0. The types of a network which Masuda and Aihara choose are a regular graph and a square lattice with rewiring. They set n, the number of node is 3600 and each node has the 8 neighbors in all graph by keeping the degree of each node constant when they rewire graphs. 
 
--- what is the prisoners dilemma
-
-The types of graphs which Masuda and Aihara use are regular graph and square lattice graphs with rewiring. They set the number of node, n is 3600 and each node has the 8 neighbors in all graph by keeping the degree of each node constant when they rewire graphs. 
-
--- implementation
 
 Models and Results:
 
@@ -75,3 +70,15 @@ Conclusions:
 Masuda, N., & Aihara, K. (2003). Spatial prisoner's dilemma optimally played in small-world networks. Physics Letters A, 313(1), 55-61.
 
 Masuda and Aihara simulate an iterated prisoners dilemma with automata that interact only if they are connected on a graph. They simulate this on different types of networks, including regular graphs, lattices, and small-world networks. They find that small world networks produce cooperation to the greatest extent. They also investigate the effects of noise on the system, and consider the robustness of cooperation on the different networks.
+
+[2] [**The Further Evolution of Cooperation**](http://www.jstor.org/stable/1702320)
+
+Axelrod, R., & Dion, D. (1988). The further evolution of cooperation. Science, 242(4884), 1385-1390.
+
+Axelrod and Douglas argue that evolution can produce cooperation as a trait, even in situations where defection is a dominant strategy in a non-iterated version of the situation. They expand on the prisoner's dilemma tournament model used in Axelrods original tournament to incorporate evolutionary aspects. In the new model automata are constructed from a set of instructions, and then they interact with other automata as is the case in the older model. However, in addition to altering the population of each type of automata, the automata exchange instructions (chromosomes) or randomly alter a single instruction (mutation). Axelrod and Douglas conclude that cooperation can emerge from randomized evolution.
+
+[3] [**A simple rule for the evolution of cooperation on graphs**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2430087/)
+
+Ohtsuki, H., Hauert, C., Lieberman, E., & Nowak, M. A. (2006). A simple rule for the evolution of cooperation on graphs. Nature, 441(7092), 502.
+
+Ohtsuki, Hauert, Lieberman, and Nowak are motivated from that cooperation is the property of all biological system. They propose the simple graph model in which natural selection prefers cooperation in the certain condition. They assume vertice are divided into two types, cooperators who pay a cost for neighbors to receive a benefit and defectors who only receive benefits from cooperators. They simulate for various graph types(cycle, lattice, random regular graph, random graph and scale-free network) and find the condition that cooperators spread throughout the graph. They find that the fewer connections, the more cooperation in their model.
