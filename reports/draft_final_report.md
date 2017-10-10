@@ -35,7 +35,14 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 | ![figure2_a](images/fig2_a.png "Fig. 2.(a)") |
 |:--:|
-| *Fig. 2.(a)* |
+| * Fig. 2.(a) * |
+
+<p>
+    <img src="images/fig2_a.png" alt="figure2_a">
+</p>
+<p>
+    <em>Fig. 2.(a)</em>
+</p>
 
 ![figure2_b](images/fig2_b.png "Fig. 2.(b)")
 
