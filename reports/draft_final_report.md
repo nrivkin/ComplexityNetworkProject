@@ -1,20 +1,20 @@
-## The Effect of Clustering on the Emergence of Cooperation in the Spatial Prisoner's Dilemma
+# The Effect of Clustering on the Emergence of Cooperation in the Spatial Prisoner's Dilemma
 
 Noah Rivkin, Changjun Lim
 
-### Abstract:
+## Abstract:
 
 We attempted to reproduce and expand upon the findings of Masuda and Aihara [1]. Masuda and Aihara's work examines the spatial prisoner's dilemma on small world graphs. They found that cooperative behavior emerged in a wide range of conditions. When we replicated their experiment we found qualitatively similar results, but under a smaller range of conditions. We also expanded on their original work by incorporating additional types of small world graphs. They had used only Watts-Strogatz type graphs, while we tested Holmes-Kim graphs. Masuda and Aihara suggest that their work may suggest why small-world networks are so prevalent in society. They also suggest that one reason why cooperation does not always dominate could be that the rewards for defection are too high. Our analysis suggests that their results do not hold under preferentially attachment, which provides an additional explanation for real world examples where cooperation is not dominant.
 
 
-Introduction:
+## Introduction:
 
 We can find cooperation within groups in every ecological and social system. But in the game theory, the prisoner's dilemma describes the situation that each individual is tempted to defect. There are two players who choose either cooperation(C) or defection(D) in prisoner's dilemma. A player choosing C receives R(reward) or S(sucker) and a player choosing D receives T(temptation) or P(Punishment) according to the opponent chooses C or D. Since T > R > P > S is given, defection is the best selection for each player regardless of the opponent's choice. So there have been many attempts to resolve the dilemma, like iterated games [2] and spatial games [1, 3].
 
-Masuda and Aihara make the model that every node of a network is a player and in each step, a player play a single prisoner's dilemma game with its neighbors, then after every player sums their poins, they change their strategy to the most successful neighbors'(if it is best, its strategy holds) in the next step. They assume T > 1, R = 1, P = S = 0. The types of a network which Masuda and Aihara choose are a regular graph and a square lattice with rewiring. They set n, the number of node is 3600 and each node has the 8 neighbors in all graph by keeping the degree of each node constant when they rewire graphs. 
+Masuda and Aihara make the model that every node of a network is a player and in each step, a player plays a single prisoner's dilemma game with its neighbors, then after every player sums their points, they change their strategy to the most successful neighbors'(if it is best, its strategy holds) in the next step. They assume T > 1, R = 1, P = S = 0. The types of a network which Masuda and Aihara choose are a regular graph and a square lattice with rewiring. They set n, the number of node is 3600 and each node has the 8 neighbors in all graph by keeping the degree of each node constant when they rewire graphs. 
 
 
-Models and Results:
+## Models and Results:
 
 In order to validate our model, we needed to show that it shared behavior with Masuda and Aihara's[1] model. To do this, we tested what values of T lead to cooperation. In their work, they used a rewired regular graph with n=3600 and k=8, and determined the percentage of the population that was cooperative for different values of T. A critical point was found at T=2.25 for p=0 and p=0.01. When we attempted to reproduce their results we found qualitative similarities, but a critical point of T=2 for p=0 and p=0.01. The transition region was 1.999<T<2, which is smaller than we expected. We also conducted the experiment using a 60 by 60 lattice. Masuda and Aihara found 4 distinct regimes, the last of which showed defection to be completely dominant after T=2.25. As before, our findings were qualitatively similar, but with only 3 regimes and lower values of T. 
 
@@ -32,23 +32,18 @@ The graphs have about half value after transient for Fig2. (b) and (e).
 In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 0 and the graph converges faster with bigger p as we expected. Since the path length decreases as p increases, the defector spreads faster with bigger p.
 
 
-Fig. 2.(a)
-![figure2_a](images/fig2_a.png)
 
-Fig. 2.(b)
-![figure2_b](images/fig2_b.png)
+![figure2_a](images/fig2_a.png "Fig. 2.(a)")
 
-Fig. 2.(c)
-![figure2_c](images/fig2_c.png)
+![figure2_b](images/fig2_b.png "Fig. 2.(b)")
 
-Fig. 2.(d)
-![figure2_d](images/fig2_d.png)
+![figure2_c](images/fig2_c.png "Fig. 2.(c)")
 
-Fig. 2.(e)
-![figure2_e](images/fig2_e.png)
+![figure2_d](images/fig2_d.png "Fig. 2.(d)")
 
-Fig. 2.(f)
-![figure2_f](images/fig2_f.png)
+![figure2_e](images/fig2_e.png "Fig. 2.(e)")
+
+![figure2_f](images/fig2_f.png "Fig. 2.(f)")
 
 
 
@@ -63,7 +58,7 @@ Fig. 2.(f)
 Conclusions:
 
 
-### Annotated Bibliography:
+## Annotated Bibliography:
 
 [1] [**Spatial prisoner’s dilemma optimally played in small-world networks**](http://www.sciencedirect.com/science/article/pii/S0375960103006935#bBIB002)
 
