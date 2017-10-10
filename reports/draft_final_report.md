@@ -1,8 +1,8 @@
-### The Effect of Clustering on the Emergence of Cooperation in the Spatial Prisoner's Dilemma
+## The Effect of Clustering on the Emergence of Cooperation in the Spatial Prisoner's Dilemma
 
 Noah Rivkin, Changjun Lim
 
-#### Abstract:
+### Abstract:
 
 We attempted to reproduce and expand upon the findings of Masuda and Aihara[1]. Masuda and Aihara's work examines the spatial prisoner's dilemma on small world graphs. They found that cooperative behavior emerged in a wide range of conditions. When we replicated their experiment we found qualitatively similar results, but under a smaller range of conditions. We also expanded on their original work by incorporating additional types of small world graphs. They had used only Watts-Strogatz type graphs, while we tested Holmes-Kim graphs. Masuda and Aihara suggest that their work may suggest why small-world networks are so prevalent in society. They also suggest that one reason why cooperation does not always dominate could be that the rewards for defection are too high. Our analysis suggests that their results do not hold under preferentially attachment, which provides an additional explanation for real world examples where cooperation is not dominant.
 
