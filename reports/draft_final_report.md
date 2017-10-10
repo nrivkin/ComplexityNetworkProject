@@ -39,8 +39,6 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 <p>
     <img src="images/fig2_a.png" alt="figure2_a">
-</p>
-<p>
     <em>Fig. 2.(a)</em>
 </p>
 
