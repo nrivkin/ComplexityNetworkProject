@@ -20,7 +20,7 @@ In order to validate our model, we needed to show that it shared behavior with M
 
 | ![figure1_a](images/fig1_a.png "Fig. 1.(a)") | ![figure1_b](images/fig1_b.png "Fig. 1.(b)") |
 | ---------- | ---------- |
-| Fig. 1.(a) | Fig. 1.(b) |
+| <center> **Fig. 1.(a)** </center> | <center> **Fig. 1.(b)** </center> |
 
 We have been unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our finding still varies. One possibility is that the initial distribution of cooperators is responsible. However, averaging the results over 10 trials makes this unlikely.
 
@@ -35,11 +35,11 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 | ![figure2_a](images/fig2_a.png "Fig. 2.(a)") | ![figure2_b](images/fig2_b.png "Fig. 2.(b)") | ![figure2_c](images/fig2_c.png "Fig. 2.(c)") |
 | ---------- | ---------- | ---------- |
-| Fig. 2.(a) | Fig. 2.(b) | Fig. 2.(c) |
+| <center> **Fig. 2.(a)** </center> | <center> **Fig. 2.(b)** </center> | <center> **Fig. 2.(c)** </center> |
 
 | ![figure2_d](images/fig2_d.png "Fig. 2.(d)") | ![figure2_e](images/fig2_e.png "Fig. 2.(e)") | ![figure2_f](images/fig2_f.png "Fig. 2.(f)") |
 | ---------- | ---------- | ---------- |
-| Fig. 2.(d) | Fig. 2.(e) | Fig. 2.(f) |
+| <center> **Fig. 2.(d)** </center> | <center> **Fig. 2.(e)** </center> | <center> **Fig. 2.(f)** </center> |
 
 
 (Expansion - not yet)
