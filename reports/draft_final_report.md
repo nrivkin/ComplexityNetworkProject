@@ -18,7 +18,9 @@ Masuda and Aihara make the model that every node of a network is a player and in
 
 In order to validate our model, we needed to show that it shared behavior with Masuda and Aihara's[1] model. To do this, we tested what values of T lead to cooperation. In their work, they used a rewired regular graph with n=3600 and k=8, and determined the percentage of the population that was cooperative for different values of T. A critical point was found at T=2.25 for p=0 and p=0.01. When we attempted to reproduce their results we found qualitative similarities, but a critical point of T=2 for p=0 and p=0.01. The transition region was 1.999<T<2, which is smaller than we expected. We also conducted the experiment using a 60 by 60 lattice. Masuda and Aihara found 4 distinct regimes, the last of which showed defection to be completely dominant after T=2.25. As before, our findings were qualitatively similar, but with only 3 regimes and lower values of T. 
 
-(figure 1)
+![figure1_a](images/fig1_a.png "Fig. 1.(a)")
+
+![figure1_b](images/fig1_b.png "Fig. 1.(b)")
 
 We have been unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our finding still varies. One possibility is that the initial distribution of cooperators is responsible. However, averaging the results over 10 trials makes this unlikely.
 
