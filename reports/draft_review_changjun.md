@@ -9,6 +9,8 @@ What does a SIR model stand for? It is necessary to explain them.
 I understand what you are doing, but it is unclear what question you are trying to answer. 
 
 ### Methodology
+Is there any reason to choose SIR model? 
+
 The model you simulate is not explained in detail. What exactly transmission between cities means? How many people are infected if the plague is transmitted? What does reinfection mean?
 
 ### Results
@@ -29,10 +31,7 @@ The interpretations of Figure 2 and 4 are not enough.
 The network replicating the original paper has the similar properties and tendency with the original one. 
 
 ### Extension
-The approach to make the model elaborate is clear and proper.
-
-### Progress
-I think the direction you choose is proper.
+The approach to make the model elaborate is clear and proper. 
 
 ### Presentation
 It looks good to use an active voice.
