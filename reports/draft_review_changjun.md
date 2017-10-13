@@ -31,7 +31,7 @@ The interpretations of Figure 2 and 4 are not enough.
 The network replicating the original paper has the similar properties and tendency with the original one. 
 
 ### Extension
-The approach to make the model elaborate is clear and proper. 
+I think the approach to make the model elaborate is clear and proper. You may need clearer intrepreation of the results from the extension.
 
 ### Presentation
 It looks good to use an active voice.
