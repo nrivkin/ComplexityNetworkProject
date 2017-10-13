@@ -31,7 +31,7 @@ The interpretations of Figure 2 and 4 are not enough.
 The network replicating the original paper has the similar properties and tendency with the original one. 
 
 ### Extension
-I think the approach to make the model elaborate is clear and proper. You may need clearer intrepreation of the results from the extension.
+I think the approach to make the model elaborate is clear and proper. You may need clearer interpreation of the results from the extension.
 
 ### Presentation
 It looks good to use an active voice.
@@ -41,6 +41,6 @@ The meanings of some words are unclear(like three parameters). The explanation a
 ### Mechanics
 The hyperlink for OWTRAD dataset is good.
 
-The captions of Figure 2 and Figure 4 are truncated
+The captions of Figure 2 and Figure 4 are truncated.
 
 There is no bibliography. 
