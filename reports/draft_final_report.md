@@ -21,7 +21,7 @@ In order to validate our model, we attempt to show that it shares behavior with 
 
 | ![figure1_a](images/fig1_a.png "Fig. 1.(a)") | ![figure1_b](images/fig1_b.png "Fig. 1.(b)") | ![figure1_c](images/SpatialPD_Fig1.gif "Fig. 1.(c)") |
 |:----------:|:----------:|:----------:|
-| **Fig. 1.(a)** | **Fig. 1.(b)**| **Fig. 1,(c):** original results|
+| **Fig. 1.(a)** | **Fig. 1.(b)**| **Fig. 1.(c):** original results|
 
 We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. However, averaging the results over 10 trials makes this unlikely.
 
