@@ -19,9 +19,9 @@ Masuda and Aihara make a model where every node of a network is a player and in 
 
 In order to validate our model, we attempt to show that it shares behavior with Masuda and Aihara's[1] model. To do this, we test what values of T lead to cooperation. In their work, they used a rewired regular graph with n=3600 and k=8, and determined the percentage of the population that was cooperative for different values of T. They found a critical point at T=2.25 for p=0 and p=0.01. When we attempt to reproduce their results we find qualitative similarities, but a critical point of T=2 for p=0 and p=0.01. The transition region is 1.999<T<2, which is smaller than we expect. We also conduct the experiment using a 60 by 60 lattice. Masuda and Aihara found 4 distinct regimes, the last of which showed defection to be completely dominant after T=2.25. As before, our findings are qualitatively similar, but with only 3 regimes and lower values of T. 
 
-| ![figure1_a](images/fig1_a.png "Fig. 1.(a)") | ![figure1_b](images/fig1_b.png "Fig. 1.(b)") |
-|:----------:|:----------:|
-| **Fig. 1.(a)** | **Fig. 1.(b)** |
+| ![figure1_a](images/fig1_a.png "Fig. 1.(a)") | ![figure1_b](images/fig1_b.png "Fig. 1.(b)") | ![figure1_c](images/SpatialPD_Fig1.gif "Fig. 1.(c)") |
+|:----------:|:----------:|:----------:|
+| **Fig. 1.(a)** | **Fig. 1.(b)**| **Fig. 1,(c):** original results|
 
 We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. However, averaging the results over 10 trials makes this unlikely.
 
@@ -43,6 +43,10 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 | ![figure2_d](images/fig2_d.png "Fig. 2.(d)") | ![figure2_e](images/fig2_e.png "Fig. 2.(e)") | ![figure2_f](images/fig2_f.png "Fig. 2.(f)") |
 |:----------:|:----------:|:----------:|
 | **Fig. 2.(d)** | **Fig. 2.(e)** | **Fig. 2.(f)** |
+
+| ![figure2_g](images/SpatialPD_Fig2.gif "Fig. 2.(g)") |
+|:----------:|
+| **Fig. 2.(g):** original results|
 
 
 (Expansion - not yet)
