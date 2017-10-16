@@ -68,12 +68,12 @@ In HK graphs p is the likelyhood that an additional triangle will be added to a 
 When considering the percentage of cooperators over time, as shown in Fig. 4, we observed behavior different from that displayed in Fig. 2. The value of T does not affect the percentage of cooperators as it does in Fig. 2. The number of cooperators stabilizes within ten timesteps. The population of cooperators does not converge to zero, even for a high T. Instead the success of cooperation is dependent on the initial population of cooperators.
 
 
-| ![figure4_d](images/fig4_d.png "Fig. 4.(d)") | ![figure2_e](images/fig4_e.png "Fig. 4.(e)") | ![figure4_f](images/fig4_f.png "Fig. 4.(f)") |
+| ![figure4_a](images/fig4_a.png "Fig. 4.(a)") | ![figure2_b](images/fig4_b.png "Fig. 4.(b)") | ![figure4_c](images/fig4_c.png "Fig. 4.(c)") |
 |:----------:|:----------:|:----------:|
 | **Fig. 4.(a)** | **Fig. 4.(b)** | **Fig. 4.(c)** |
 
 
-We believe that the dependency on intitial population is a property of the hub-spoke architecture. A single defector on a hub can result in many of the nodes at the end of the hubs' spokes becoming defectors. Similarly, a single cooperator at a hub can spread rapidly. Because the hub node has so many neighbors the node on the hub has a much higher possible score than a node elsewhere. As a result the nodes on hubs quickly come to dominate the part of the graph near them. The importance of the hubs results in the sensitivity to initial populations. The percentage of the hubs intitially populated by cooperators is directly proportional to the percentage of the initial population that are cooperators. The potential score from a hub is high enough to overwhelm the dependency on T seen in Fig. 2.
+We believe that the dependency on initial population is a property of the hub-spoke architecture. A single defector on a hub can result in many of the nodes at the end of the hubs' spokes becoming defectors. Similarly, a single cooperator at a hub can spread rapidly. Because the hub node has so many neighbors the node on the hub has a much higher possible score than a node elsewhere. As a result the nodes on hubs quickly come to dominate the part of the graph near them. The importance of the hubs results in the sensitivity to initial populations. The percentage of the hubs intitially populated by cooperators is directly proportional to the percentage of the initial population that are cooperators. The potential score from a hub is high enough to overwhelm the dependency on T seen in Fig. 2.
 
 
 This dependency on initial conditions provides an alternative to Masuda and Aihara's explanation of the emergence of cooperation. Instead of cooperation in a network being dependent on the value of T, it is instead dependent on the initial proportion of cooperators. This resistance to change in networks formed by preferential attachment could be responsible for many behaviors in real world social networks.
