@@ -56,7 +56,7 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 Masuda and Aihara only considered graphs with constants degree. We use powerlaw graphs formed by preferential attachment to see if hub-spoke graph architecture leads to different results. We run the same procedure we used for regular and lattice graphs on Holmes-Kim graphs.
 
-In HK graphs p is the likelyhood that an additional triangle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the porportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation.
+In HK graphs p is the likelyhood that an additional triangle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the proportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation.
 
 
 
@@ -73,8 +73,10 @@ When considering the percentage of cooperators over time, as shown in Fig. 4, we
 | **Fig. 4.(a)** | **Fig. 4.(b)** | **Fig. 4.(c)** |
 
 
-We believe that the dependency on intitial population is a property of the hub-spoke architecture. A single defector on a hub can result in many of the nodes at the end of the hubs' spokes becoming defectors. Similarly, a single cooperator at a hub can spread rapidly. Because the hub node has so many neighbors the node on the hub has a much higher possible score than a node elsewhere. As a result the nodes on hubs quickly come to dominate the part of the graph near them. The importance of the hubs results in the sensitivity to initial populations. The percentage of the hubs intitially populated by cooperators is directly porportional to the percentage of the initial population that are cooperators. The potential score from a hub is high enough to overwhelm the dependency on T seen in Fig. 2.
+We believe that the dependency on intitial population is a property of the hub-spoke architecture. A single defector on a hub can result in many of the nodes at the end of the hubs' spokes becoming defectors. Similarly, a single cooperator at a hub can spread rapidly. Because the hub node has so many neighbors the node on the hub has a much higher possible score than a node elsewhere. As a result the nodes on hubs quickly come to dominate the part of the graph near them. The importance of the hubs results in the sensitivity to initial populations. The percentage of the hubs intitially populated by cooperators is directly proportional to the percentage of the initial population that are cooperators. The potential score from a hub is high enough to overwhelm the dependency on T seen in Fig. 2.
 
+
+This dependency on initial conditions provides an alternative to Masuda and Aihara's explanation of the emergence of cooperation. Instead of cooperation in a network being dependent on the value of T, it is instead dependent on the initial proportion of cooperators. This resistance to change in networks formed by preferential attachment could be responsible for many behaviors in real world social networks.
 
 ## Annotated Bibliography:
 
