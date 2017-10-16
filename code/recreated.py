@@ -57,7 +57,7 @@ class TestBench:
         plt.show()
 
     def draw2(self, label=None):
-        ratio = [self.c0] + self.ratio
+        ratio = np.insert(self.ratio, 0, self.c0)
         x = range(len(ratio))
         if label is None:
             plt.plot(x, ratio * 100)
