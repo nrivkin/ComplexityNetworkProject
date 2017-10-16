@@ -56,7 +56,7 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 Masuda and Aihara only considered graphs with constants degree. We use powerlaw graphs formed by preferential attachment to see if hub/spoke graph architecture leads to different results. We run the same procedure we used for regular and lattice graphs on Holmes-Kim graphs.
 
-In HK graphs p is the likelyhood that an additional triagle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the porportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation.
+In HK graphs p is the likelyhood that an additional triangle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the porportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation.
 
 
 
@@ -65,7 +65,7 @@ In HK graphs p is the likelyhood that an additional triagle will be added to a n
 | **Fig. 3**|
 
 
-When considering the percentage of coopeerators over time, as shown in Fig. 4, we observed behavior very different from that displayed in Fig. 2. The value of T does not affect the percentage of cooperators as it does in Fig. 2. The number of cooperators stabilizes within ten timesteps. The population of cooperators does not converge to zero, even for a high T. Instead the success of cooperation is dependent on the initial population of cooperators.
+When considering the percentage of cooperators over time, as shown in Fig. 4, we observed behavior different from that displayed in Fig. 2. The value of T does not affect the percentage of cooperators as it does in Fig. 2. The number of cooperators stabilizes within ten timesteps. The population of cooperators does not converge to zero, even for a high T. Instead the success of cooperation is dependent on the initial population of cooperators.
 
 
 | ![figure4_d](images/fig4_d.png "Fig. 4.(d)") | ![figure2_e](images/fig4_e.png "Fig. 4.(e)") | ![figure4_f](images/fig4_f.png "Fig. 4.(f)") |
