@@ -60,9 +60,9 @@ Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instea
 
 
 
-| ![figure3_a](images/fig3_a.png "Fig. 3.(a)") | ![figure3_b](images/fig3_b.png "Fig. 3.(b)") | 
-|:----------:|:----------:|
-| **Fig. 3.(a)** | **Fig. 3.(b)**|
+| ![figure3_b](images/fig3_b.png "Fig. 3.(b)") | 
+|:----------:|
+| **Fig. 3**|
 
 
 | ![figure4_a](images/fig4_a.png "Fig. 4.(a)") | ![figure4_b](images/fig4_b.png "Fig. 4.(b)") | ![figure4_c](images/fig4_c.png "Fig. 4.(c)") |
