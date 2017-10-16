@@ -60,9 +60,18 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 -- figure with caption
 
-| ![figure3_a](images/fig3_a.png "Fig. 3.(a)") | ![figure3_b](images/fig1_b.png "Fig. 3.(b)") | 
+| ![figure3_a](images/fig3_a.png "Fig. 3.(a)") | ![figure3_b](images/fig3_b.png "Fig. 3.(b)") | 
 |:----------:|:----------:|
-| **Fig. 3.(a)** | **Fig. 1.(b)**|
+| **Fig. 3.(a)** | **Fig. 3.(b)**|
+
+
+| ![figure4_a](images/fig4_a.png "Fig. 4.(a)") | ![figure4_b](images/fig4_b.png "Fig. 4.(b)") | ![figure4_c](images/fig4_c.png "Fig. 4.(c)") |
+|:----------:|:----------:|:----------:|
+| **Fig. 4.(a)** | **Fig. 4.(b)** | **Fig. 4.(c)** |
+
+| ![figure4_d](images/fig4_d.png "Fig. 4.(d)") | ![figure2_e](images/fig4_e.png "Fig. 4.(e)") | ![figure4_f](images/fig4_f.png "Fig. 4.(f)") |
+|:----------:|:----------:|:----------:|
+| **Fig. 4.(d)** | **Fig. 4.(e)** | **Fig. 4.(f)** |
 
 -- reasoning/interpretation
 
