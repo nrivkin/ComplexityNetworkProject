@@ -56,6 +56,8 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 Masuda and Aihara only considered graphs with constants degree. We use powerlaw graphs formed by preferential attachment to see if hub/spoke graph architecture leads to different results. We run the same procedure we used for regular and lattice graphs on Holmes-Kim and power law graphs.
 
+Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the porportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge.
+
 
 
 | ![figure3_a](images/fig3_a.png "Fig. 3.(a)") | ![figure3_b](images/fig3_b.png "Fig. 3.(b)") | 
