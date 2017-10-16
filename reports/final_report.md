@@ -56,7 +56,7 @@ In the third condition for Fig. 2(c) and (f), the cooperators ratio converge to 
 
 Masuda and Aihara only considered graphs with constants degree. We use powerlaw graphs formed by preferential attachment to see if hub/spoke graph architecture leads to different results. We run the same procedure we used for regular and lattice graphs on Holmes-Kim graphs.
 
-Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the porportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge.
+In HK graphs p is the likelyhood that an additional triagle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead we observe that while the porportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation.
 
 
 
@@ -65,13 +65,10 @@ Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instea
 | **Fig. 3**|
 
 
-| ![figure4_a](images/fig4_a.png "Fig. 4.(a)") | ![figure4_b](images/fig4_b.png "Fig. 4.(b)") | ![figure4_c](images/fig4_c.png "Fig. 4.(c)") |
-|:----------:|:----------:|:----------:|
-| **Fig. 4.(a)** | **Fig. 4.(b)** | **Fig. 4.(c)** |
 
 | ![figure4_d](images/fig4_d.png "Fig. 4.(d)") | ![figure2_e](images/fig4_e.png "Fig. 4.(e)") | ![figure4_f](images/fig4_f.png "Fig. 4.(f)") |
 |:----------:|:----------:|:----------:|
-| **Fig. 4.(d)** | **Fig. 4.(e)** | **Fig. 4.(f)** |
+| **Fig. 4.(a)** | **Fig. 4.(b)** | **Fig. 4.(c)** |
 
 -- reasoning/interpretation
 
