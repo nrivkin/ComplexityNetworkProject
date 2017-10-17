@@ -38,7 +38,7 @@ In the first experiment, we observed that there are 3 regimes after stabilizatio
  
 Unlike Masuda and Aihara, who observed that cooperators dominate in the first condition, our results show that the proportion of cooperators converges to small values in many of the graphs. The proportion of cooperators after transient behavior increases when p is large in Fig. 2(a), and small p in Fig. 2(d). If a cooperator is among defectors, it will always be dominated by the defectors. So cooperators must be clustered at the beginning in order to dominate the network. However, when the initial population of cooperators is low, the cooperators are surrounded by defectors, so defectors dominate.
 
-The graphs have also zero value after transient for Fig2. (b) and (e). 
+The graphs have zero value after transient for Fig2. (b) and (e). 
 In the third condition for Fig. 2(c) and (f), the cooperator's ratio converge to 0 and the graph converges faster with bigger p as we expected. Since the path length decreases as p increases, the defector spreads faster with bigger p.
 
 | ![figure2_a](images/fig2_a.png "Fig. 2.(a)") | ![figure2_b](images/fig2_b.png "Fig. 2.(b)") | ![figure2_c](images/fig2_c.png "Fig. 2.(c)") |
