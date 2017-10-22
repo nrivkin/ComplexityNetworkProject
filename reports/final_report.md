@@ -11,7 +11,7 @@ We attempt to reproduce and expand upon the findings of Masuda and Aihara [1]. M
 
 We find cooperation within groups in every ecological and social system. But in game theory, the prisoner's dilemma describes a situation in which defection is the dominant strategy for each individual, but mutual defection leads to mutually undesirable situation. In prisoner's dilemma, there are two strategies, cooperation(C) or defection(D). The players choose one of the strategies every step. A player choosing C receives R(reward) or S(sucker) and a player choosing D receives T(temptation) or P(Punishment) depending on whether the opponent chooses C or D respectively. Since T > R > P > S is given, defection is the best selection for each player regardless of the opponent's choice. Attempts have been made to resolve the dilemma, including iterated games [3] and spatial games [1, 4].
 
-Masuda and Aihara make a model where every node of a network is a player and in each step, a player plays a single prisoner's dilemma game against each of its neighbors. Then after every player sums their points, they change their strategy to that of their the most successful neighbor(if it is best, its strategy holds) for the next step. Masuda and Aihara assume T > 1, R = 1, P = S = 0. They consider rewired regular graphs and rewired square lattice graphs using Moore neighborhoods. They set n, the number of nodes, to 3600. They ensure each node has 8 neighbors in all graphs by keeping the degree of each node constant when they rewire graphs. 
+Masuda and Aihara make a model where every node of a network is a player and in each step, a player plays a single prisoner's dilemma game against each of its neighbors. Then after every player sums their points, they change their strategy to that of their the most successful neighbor(if it is best, its strategy holds) for the next step. Masuda and Aihara use T > 1, R = 1, P = S = 0. They consider rewired regular graphs and rewired square lattice graphs using Moore neighborhoods. They set n, the number of nodes, to 3600. They ensure each node has 8 neighbors in all graphs by keeping the degree of each node constant when they rewire graphs. 
 
 
 
@@ -21,43 +21,44 @@ In order to validate our implementation, we attempt to show that it shares behav
 
 | ![figure1_a](images/fig1_a.png "Fig. 1.(a)") | ![figure1_b](images/LatticeFig1b.png "Fig. 1.(b)") | 
 |:----------:|:----------:|
-| **Fig. 1.(a)** | **Fig. 1.(b)**|
+| **Fig. 1.(a):** proportion of cooperators on a rewired regular graph with n=3600, k=8 after 100 steps| **Fig. 1.(b):** proportion of cooperators on a rewired lttice graph after 100 steps|
 
 | ![figure1_c](images/SpatialPD_Fig1.gif "Fig. 1.(c)") |
 |:----------:|
-|**Fig. 1.(c):** original results|
+|**Fig. 1.(c):** Masuda and Aihara's results. |
 
 
-We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. However, averaging the results over 10 trials makes this unlikely.
+We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. In order to reduce the likelyhood that the original distribution was influencing the output we ran the experiment with ten different randomly generated initial distributions, and averaged the proportion of cooperators at each timestep. 
 
 
+Figure 1 shows the proportion of cooperators that emerges for different values of T, but it does not show how the networks reached thier final conditions. In order to better understand the process by which the networks change over time we graph the propertion of cooperators, %C, in a network over time. We begin with a network with a initial cooperator ratio, c<sub>0</sub>, and graph the value of %C at each time step.
 
 
- 
-In the first experiment, we observed that there are 3 regimes after stabilization. In the second regime, the proportion of cooperators decreases as rewiring parameter p increases, that is, clustering coefficient decreases. We graph the proportion of cooperator over time to check the tendency of the network over time. We simulate it by giving 3 values of T and c<sub>0</sub>(the initial cooperator ratio) pair for each regime and changing p value with 0, 0.001, 0.01, 0.1, and 0.8. We set the first condition for Fig 2.(a) and (d) as T = 1.1 and c<sub>0</sub> = 0.1 because cooperators are dominant in the first regime. The second condition for Fig 2.(b) and (e) is T = 1.7 and c<sub>0</sub> = 0.5. The third condition for Fig 2.(c) and (f) is T = 3 and c<sub>0</sub> = 0.995 since defectors are dominant.
+| ![figure2_a](images/fig2_a.png "Fig. 2.(a)") | ![figure2_b](images/fig2_b.png "Fig. 2.(b)") | ![figure2_c](images/fig2_c.png "Fig. 2.(c)") |
+|:----------:|:----------:|:----------:|
+| **Fig. 2.(a):** Watts-Strogatz graph, T=1.1, c<sub>0</sub>=0.1 | **Fig. 2.(b):** Watts-Strogatz graph, T=1.7, c<sub>0</sub> = 0.5| **Fig. 2.(c):** Watts-Strogatz graph, T=3.0 , c<sub>0</sub>=0.995|
+
+| ![figure2_d](images/fig2_d.png "Fig. 2.(d)") | ![figure2_e](images/fig2_e.png "Fig. 2.(e)") | ![figure2_f](images/fig2_f.png "Fig. 2.(f)") |
+|:----------:|:----------:|:----------:|
+| **Fig. 2.(d):** Lattice graph, T=1.1, c<sub>0</sub>=0.1| **Fig. 2.(e):** Lattice graph, T=1.7, c<sub>0</sub>=0.5| **Fig. 2.(f):** Lattice graph, T=3.0, c<sub>0</sub>=0.995|
+
+| ![figure2_g](images/SpatialPD_Fig2.gif "Fig. 2.(g)") |
+|:----------:|
+| **Fig. 2.(g):** Masuda and Aihara's results from the same initial conditions|
+
+
+All of the graphs converge at some value of %C. Once the value of %C stops changing we consider the behavior of the network to be stable. Before reaching a stable state the graph exhibits transient behavior.
+
+In the first experiment, we observed that there are 3 regimes after stabilization. In the second regime, the proportion of cooperators decreases as rewiring parameter p increases, that is, clustering coefficient decreases. We graph the proportion of cooperator over time to check the tendency of the network over time. We simulate it by giving 3 values of T and c<sub>0</sub> pair for each regime and changing p value with 0, 0.001, 0.01, 0.1, and 0.8. We set the first condition for Fig 2.(a) and (d) as T = 1.1 and c<sub>0</sub> = 0.1 because cooperators are dominant in the first regime. The second condition for Fig 2.(b) and (e) is T = 1.7 and c<sub>0</sub> = 0.5. The third condition for Fig 2.(c) and (f) is T = 3 and c<sub>0</sub> = 0.995 since defectors are dominant.
  
 Unlike Masuda and Aihara, who observed that cooperators dominate in the first condition, our results show that the proportion of cooperators converges to small values in many of the graphs. The proportion of cooperators after transient behavior increases when p is large in Fig. 2(a), and small p in Fig. 2(d). If a cooperator is among defectors, it will always be dominated by the defectors. So cooperators must be clustered at the beginning in order to dominate the network. However, when the initial population of cooperators is low, the cooperators are surrounded by defectors, so defectors dominate.
 
 The graphs have zero value after transient for Fig2. (b) and (e). 
 In the third condition for Fig. 2(c) and (f), the cooperator's ratio converge to 0 and the graph converges faster with bigger p as we expected. Since the path length decreases as p increases, the defector spreads faster with bigger p.
 
-| ![figure2_a](images/fig2_a.png "Fig. 2.(a)") | ![figure2_b](images/fig2_b.png "Fig. 2.(b)") | ![figure2_c](images/fig2_c.png "Fig. 2.(c)") |
-|:----------:|:----------:|:----------:|
-| **Fig. 2.(a)** | **Fig. 2.(b)** | **Fig. 2.(c)** |
-
-| ![figure2_d](images/fig2_d.png "Fig. 2.(d)") | ![figure2_e](images/fig2_e.png "Fig. 2.(e)") | ![figure2_f](images/fig2_f.png "Fig. 2.(f)") |
-|:----------:|:----------:|:----------:|
-| **Fig. 2.(d)** | **Fig. 2.(e)** | **Fig. 2.(f)** |
-
-| ![figure2_g](images/SpatialPD_Fig2.gif "Fig. 2.(g)") |
-|:----------:|
-| **Fig. 2.(g):** original results|
-
-
 Masuda and Aihara only considered graphs with the constant degree. We use power-law graphs formed by preferential attachment to see if hub-spoke graph architecture leads to different results. We run the same procedure we used for regular and lattice graphs on Holme-Kim graphs [2].
 
-In HK graphs p is the likelihood that an additional triangle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead, we observe that while the proportion of s
-s tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation.
+In HK graphs p is the likelihood that an additional triangle will be added to a node on its creation, leading to a greater clustering coefficient. Unlike the previous graphs, sweeping T does not lead to distinct regimes. Instead, we observe that while the proportion of cooperators tends to be less for higher T values, the percentage of cooperators does not converge. Higher values of p, which correspond to greater clustering, lead to increased cooperation. This is shown in Figure 3.
 
 
 
