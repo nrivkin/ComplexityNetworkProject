@@ -28,10 +28,14 @@ In order to validate our implementation, we attempt to show that it shares behav
 |**Fig. 1.(c):** Masuda and Aihara's results. |
 
 
-We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. In order to reduce the likelyhood that the original distribution was influencing the output we ran the experiment with ten different randomly generated initial distributions, and averaged the proportion of cooperators at each timestep. 
+We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. In order to reduce the likelihood that the original distribution was influencing the output we ran the experiment with ten different randomly generated initial distributions, and averaged the proportion of cooperators at each timestep. 
 
 
-Figure 1 shows the proportion of cooperators that emerges for different values of T, but it does not show how the networks reached thier final conditions. In order to better understand the process by which the networks change over time we graph the propertion of cooperators, %C, in a network over time. We begin with a network with a initial cooperator ratio, c<sub>0</sub>, and graph the value of %C at each time step.
+Figure 1 shows the proportion of cooperators that emerges for different values of T, but it does not show how the networks reached thier final conditions. In order to better understand the process by which the networks change over time we graph the propertion of cooperators, %C, in a network over time. We begin with a network with a initial cooperator ratio, c<sub>0</sub>, and graph the value of %C at each time step. Since we can divide the 3 following regimes, we chose the T value in each regime(T = 1.1, 1.7, 3.0).
+
+ \(i) For small T, cooperation dominates regardless of p.<br />
+ \(ii) Roughly for 1.2 ≤ b ≤ 2.1, the number of cooperators depends on p. <br />
+ \(iii) For large T, all player eventually becomes a defector.
 
 
 | ![figure2_a](images/fig2_a.png "Fig. 2.(a)") | ![figure2_b](images/fig2_b.png "Fig. 2.(b)") | ![figure2_c](images/fig2_c.png "Fig. 2.(c)") |
@@ -49,13 +53,11 @@ Figure 1 shows the proportion of cooperators that emerges for different values o
 
 All of the graphs converge at some value of %C. Once the value of %C stops changing we consider the behavior of the network to be stable. Before reaching a stable state the graph exhibits transient behavior.
 
-We observed that there are 3 regimes in Fig 1. In the second regime, the proportion of cooperators decreases as rewiring parameter p increases, that is, clustering coefficient decreases. 
-We made a graph of the proportion of cooperator over time to check the tendency of the network over time. We simulate it by giving 3 values of T and c<sub>0</sub> pair for each regime and changing p value with 0, 0.001, 0.01, 0.1, and 0.8. We set the first condition for Fig 2.(a) and (d) as T = 1.1 and c<sub>0</sub> = 0.1 because cooperators are dominant in the first regime. The second condition for Fig 2.(b) and (e) is T = 1.7 and c<sub>0</sub> = 0.5. The third condition for Fig 2.(c) and (f) is T = 3 and c<sub>0</sub> = 0.995 since defectors are dominant.
+Unlike the results of Masuda and Aihara in which cooperators always dominate in the first regime, our results show that the proportion of cooperators converges to small values in many of the graphs. Only graphs with high p converge to the high percentage of cooperators. Also, in the second regime, defection is always dominant differently from the original result.
 
-Unlike Masuda and Aihara who observed that cooperators dominate in the first regime(For small T), our results show that the proportion of cooperators converges to small values in many of the graphs. The proportion of cooperators after transient behavior increases when p is large in Fig. 2(a), and small p in Fig. 2(d). If a cooperator is among defectors, it will always be dominated by the defectors. So cooperators must be clustered at the beginning in order to dominate the network. However, when the initial population of cooperators is low, the cooperators are surrounded by defectors, so defectors dominate.
+We could think that the initial population of cooperators is the major factor as well as T value. If a cooperator is among defectors, it will always chose to be a defector. So cooperators must be clustered at the beginning in order to dominate the network. However, when the initial population of cooperators is low, many of cooperators are surrounded by defectors and defectors eventually dominate in the population.
 
-The graphs have zero value after transient for Fig2. (b) and (e). 
-In the third condition for Fig. 2(c) and (f), the cooperator's ratio converge to 0 and the graph converges faster with bigger p as we expected. Since the path length decreases as p increases, the defector spreads faster with bigger p.
+In Fig. 2(c) and (f), the cooperator's ratio converge to 0 faster with bigger p. This result match with that of Masuda and Aihara. As the path length decreases as p increases, the defector spreads throughout the population more rapidly with a larger p.
 
 Masuda and Aihara only considered graphs with the constant degree. We use power-law graphs formed by preferential attachment to see if hub-spoke graph architecture leads to different results. We run the same procedure we used for regular and lattice graphs on Holme-Kim graphs [2].
 
