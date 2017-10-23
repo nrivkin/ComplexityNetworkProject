@@ -31,7 +31,7 @@ In order to validate our implementation, we attempt to show that it shares behav
 We are unable to determine the reason our results differ from the original experiments. Rewiring is not present when p=0, but our findings still vary. One possibility is that the initial distribution of cooperators is responsible. In order to reduce the likelihood that the original distribution was influencing the output we ran the experiment with ten different randomly generated initial distributions, and averaged the proportion of cooperators at each timestep. 
 
 
-Figure 1 shows the proportion of cooperators that emerges for different values of T, but it does not show how the networks reached thier final conditions. In order to better understand the process by which the networks change over time we graph the propertion of cooperators, %C, in a network over time. We begin with a network with a initial cooperator ratio, c<sub>0</sub>, and graph the value of %C at each time step. Since we can divide the 3 following regimes, we chose the T value in each regime(T = 1.1, 1.7, 3.0).
+Figure 1 shows the proportion of cooperators that emerges for different values of T, but it does not show how the networks reached thier final conditions. In order to better understand the process by which the networks change over time we graph the propertion of cooperators, %C, in a network over time. We begin with a network with a initial cooperator ratio, c<sub>0</sub>, and graph the value of %C at each time step. Since we can divide the 3 following regimes, we chose the T value(T = 1.1, 1.7, 3.0) in each regime.
 
  \(i) For small T, cooperation dominates regardless of p.<br />
  \(ii) Roughly for 1.2 ≤ b ≤ 2.1, the number of cooperators depends on p. <br />
